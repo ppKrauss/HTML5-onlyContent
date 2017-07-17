@@ -3,7 +3,7 @@ HTML5-onlyContent
 
 HTML with only content, definition and conversion tools.
 
-See also [XHTML-print W3C standard](https://www.w3.org/TR/xhtml-print/) with [HTML5 polyglot suggestions](https://www.w3.org/TR/html-polyglot/) as reference model.
+See also [HTML5 flow-content tags](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories#Flow_content) and [XHTML-print W3C standard](https://www.w3.org/TR/xhtml-print/) with [HTML5 polyglot suggestions](https://www.w3.org/TR/html-polyglot/), as reference model.
 
 ## Introduction ##
 Many online tools with a "HTML upload" interface, offline softwares with "document loading", input modules of [Content Management Systems](https://en.wikipedia.org/wiki/Content_management_system), 
