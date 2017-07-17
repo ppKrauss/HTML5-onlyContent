@@ -14,7 +14,7 @@ So, in that context, HTML must be interpreted as "only content" (no text is abou
 
 The **HTML5-onlyContent** is a content tag suite for XML or HTML formats, used to describe an HTML format that can be used as "content container" in databases or technical and legal literature published online. Its tag set (and attibutes) is a subset of HTML5 tag set, preserving same HTML5 DTD, strucuture and semantic rules.
 
-See [spec.md](spec.md).
+See **[spec.md](spec.md)**.  For rationale see [notes.md](notes.md).
 
 ## Tools ##
 
