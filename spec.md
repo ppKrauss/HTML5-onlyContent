@@ -1,0 +1,105 @@
+# HTML5-onlyContent specification
+
+The **HTML5-onlyContent** is a content tag suite for XML or HTML formats, used to describe an HTML format that can be used as "content container" in databases or technical and legal literature published online. Its tag set (and attibutes) is a subset of HTML5 tag set, preserving same HTML5 DTD, strucuture and semantic rules.
+
+## Dependencies
+
+This specification relies on some other underlying specifications.
+
+Main dependence: [W3C/TR/html5](https://www.w3.org/TR/html5). Main sections:
+* [HTML5 flow-content tags](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories#Flow_content)
+* ...
+
+Rationale and informational dependentes: see [Appendix below](#Appendix - Rationale).
+
+## The HTML5-onlyContent tag set
+
+* General for document level: `base`, `body`, `head`, `html`, `meta`, `title`.
+
+* Text and content flow:
+ - Structure:  `address`, `article`, `aside`, `section`, `footer`, `header`.
+ - List structure: `dl`, `dt`, `dd`, `ol`, `ul`, `li`.
+ - Block and flow:  `blockquote`, `br`, `div`, `h1`, `h2`, `h3`, `h4`, `h5`, `h6`, `p`, `pre`.
+ - Inline text semantics:  `a`, `abbr`, `bdi`, `bdo`, `br`, `cite`, `code`, `data`, `dfn`, `em`,  `kbd`, `mark`, `q`, `rp`, `rt`, `rtc`, `ruby`, `samp`, `small`, `span`, `strong`, `sub`, `sup`, `time`,  `var`, `wbr`.
+ - Presentation:   `b`, `big`, `hr`, `i`, `small`, `s`,  `sub`, `sup`, `u`.
+
+* Figures and tables:
+  - `caption`, `figcaption`
+  - `figure`, `img`
+  - `table`, `tbody`, `tfoot`, `thead`, `td`, `th`, `tr`, `col`, `colgroup`
+
+### Attributes in the tags
+
+* Only content and its semantic: ... no animation, no form, DOM-generator, no layout (CSS, style, etc.), no etc.
+
+* Semantic complement: as Microdata or [HTML+RDFa](https://www.w3.org/TR/html-rdfa/).
+
+## The HTML5-onlyContent rules
+
+Minimal rules about the conditional use of some tags.
+
+* Use `svg` tag only as `figure` or `sidebars` content.
+
+* In special cases, when the use of the tag `script` is valid:
+
+  - When is not possible to express data in external file (ex. in a CSV table), to complement images or ilustrations, offering raw data, `<script id="myJson" type="application/json">[[head1,head2],[1,2],[3,4]]</script>`.
+
+  - When metadata can't be expressed by `meta`, HTML+RDFa or Microdata, to express a JSON-LD. Example: `<script id="myJson" type="application/json">{name: 'Foo'}</script>`.
+
+* Interactive elements with printable representation: `summary`.
+
+## Conformance
+
+1. For XML environments and validators, adopt [HTML5 polyglot](https://www.w3.org/TR/html-polyglot/) as recomendation.
+
+2. Conformance with [html5/infrastructure/common-microsyntaxes](https://www.w3.org/TR/html5/infrastructure.html#common-microsyntaxes)
+
+3. Conformance with [html5/dom/elements](https://www.w3.org/TR/html5/dom.html#elements) <br/> "Authors must not use elements, attributes, or attribute values for purposes other than their appropriate intended semantic purpose, as doing so prevents software from correctly processing the page".
+
+5. Kinds of content, as *"3.2.4.1.2 Flow content"*, see [flow-content-1](https://www.w3.org/TR/html5/dom.html#flow-content-1).
+
+Mappings:
+
+* Assisted map from CSS:  from italics to `i` or `em` tags, from bold to `b` or `strong`, from monospace to `code` or `pre`, etc. See inline style transform and final CSS inline properties to tags.
+
+* Map from HTML4 (obsolete tags) to HTML5, see [migration](https://www.w3schools.com/html/html5_migration.asp) and [html5/html4 convertions](https://github.com/ppKrauss/html5-to-html4).
+
+------------
+
+## Appendix - Rationale
+
+### HTML5 references
+
+* "Palpable" elements as [DOM/palpable-content](https://www.w3.org/TR/html5/dom.html#palpable-content-0): all HTML5-onlyContent tags are palpable.
+
+* Template: *"The template element is used to declare fragments of HTML that can be cloned and inserted in the document by script"*, so, as script-dependent, `template` tag is not in the HTML5-onlyContent tag set.
+
+### xhtml-print selection
+
+Tags selected from [xhtml-print 2010](https://www.w3.org/TR/xhtml-print/), that was an XHTML1 and HTML4 based standad.
+
+> The XHTML-Print document type is defined as a set of XHTML modules. All XHTML modules are defined in the Modularization of XHTML specification [XHTMLMOD].
+
+Selected modules by HTML5-onlyContent as reference-model:
+
+* Structure Module: `body`, `head`, `html`, `title`.
+
+* Text Module: `abbr`, `acronym`, `address`, `blockquote`, `br`, `cite`, `code`, `dfn`, `div`, `em`, `h1`, `h2`, `h3`, `h4`, `h5`, `h6`, `kbd`, `p`, `pre`, `q`, `samp`, `span`, `strong`, `var`.
+
+* Hypertext Module:  `a`
+
+* List Module: `dl`, `dt`, `dd`, `ol`, `ul`, `li`.
+
+* Text Extension Module - Presentation: `b`, `big`, `hr`, `i`, `small`, `sub`, `sup`, `tt`
+
+* Basic Tables Module: `caption`, `table`, `td`, `th`, `tr`
+
+* Image Module: `img`
+
+* Metainformation Module: `meta`
+
+* Base Module: `base`
+
+### Removed tags
+
+See tags `nav`, `script`, `style`, etc.
